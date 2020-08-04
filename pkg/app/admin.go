@@ -27,7 +27,7 @@ func adminCreate(w http.ResponseWriter, r *http.Request) {
 			Title:  r.FormValue("title"),
 			Detail: r.FormValue("detail"),
 		}
-		models.CreateNews(&newsModel)
+		models.CreateNews(newsModel)
 
 		log.Println("create news")
 		http.Redirect(w, r, "/admin/create", http.StatusSeeOther)
