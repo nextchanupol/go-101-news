@@ -26,8 +26,13 @@ func AdminLogin(w http.ResponseWriter, data interface{}) {
 	render(tpAdminLogin, w, data)
 }
 
+// AdminListData data for admin
+type AdminListData struct {
+	List []*models.News
+}
+
 // AdminList renders admin login view
-func AdminList(w http.ResponseWriter, data interface{}) {
+func AdminList(w http.ResponseWriter, data *AdminListData) {
 	render(tpAdminList, w, data)
 }
 
