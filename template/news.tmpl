@@ -1,11 +1,10 @@
 {{define "root-body"}}
 <div>
-  <a href="/admin/login">Login</a>
-  <ul>
-    {{range .List}}
-    <li><a href="/news/{{.ID.Hex}}">{{.Title}}</a></li>
-    {{end}}
-  </ul>
+  <h1>{{.Title}}</h1>
+  {{if .Image}}
+  <img src="{{.Image}}">
+  {{ end }}
+  <p>{{.Detail}}</p>
 </div>
 {{ end }}
 

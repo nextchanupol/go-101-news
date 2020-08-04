@@ -15,7 +15,9 @@ import (
 
 // refactor parseTemplate
 var (
-	tpIndex       = parseTemplate("root.tmpl", "index.tmpl")
+	tpIndex = parseTemplate("root.tmpl", "index.tmpl")
+	tpNews  = parseTemplate("root.tmpl", "news.tmpl")
+
 	tpAdminLogin  = parseTemplate("root.tmpl", "admin/login.tmpl")
 	tpAdminList   = parseTemplate("root.tmpl", "admin/list.tmpl")
 	tpAdminCreate = parseTemplate("root.tmpl", "admin/create.tmpl")

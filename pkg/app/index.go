@@ -14,7 +14,11 @@ func index(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	list := models.NewsList()
+	list, err := models.NewsList()
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
 	log.Println(list)
 	view.Index(w, &view.IndexData{
 		List: list,
