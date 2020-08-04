@@ -17,7 +17,7 @@ type News struct {
 	UpdatedAt time.Time
 }
 
-var newsStorage []*News
+var newsStorage []News
 var mutxNews sync.RWMutex
 
 func generateID() string {
@@ -34,7 +34,7 @@ func NewsList() []*News {
 
 	for i := range newsStorage {
 		n := newsStorage[i]
-		r[i] = n
+		r[i] = &n
 	}
 	return r
 }
@@ -47,7 +47,7 @@ func CreateNews(news News) {
 
 	mutxNews.Lock()
 	defer mutxNews.Unlock()
-	newsStorage = append(newsStorage, &news)
+	newsStorage = append(newsStorage, news)
 }
 
 // GetNews get news by id
@@ -58,7 +58,7 @@ func GetNews(id string) *News {
 	for _, news := range newsStorage {
 		if news.ID == id {
 			n := news
-			return n
+			return &n
 		}
 	}
 	return nil
