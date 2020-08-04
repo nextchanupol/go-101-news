@@ -1,22 +1,31 @@
 {{define "root"}}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Go News</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/-/css/style.css" />
-    {{template "root-style"}}
-  </head>
-  <body>
-    <div>
-      Navbar
-    </div>
-    {{template "root-body"}}
-    <div>
-      Footer
-    </div>
-    {{template "root-script"}}
-  </body>
+
+<head>
+  <title>Go News</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/-/css/style.css" />
+  {{template "root-style" .}}
+</head>
+
+<body>
+  <div>
+    Navbar
+  </div>
+  <div class="ui container">
+    {{template "root-body" .}}
+  </div>
+
+  <div>
+    Footer
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" />
+  {{template "root-script" .}}
+</body>
+
 </html>
 {{ end }}
